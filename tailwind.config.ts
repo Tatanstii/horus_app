@@ -8,10 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        supernova: {
+          50: "rgb(var(--supernova-50) / <alpha-value>)",
+          100: "rgb(var(--supernova-100) / <alpha-value>)",
+          200: "rgb(var(--supernova-200) / <alpha-value>)",
+          300: "rgb(var(--supernova-300) / <alpha-value>)",
+          400: "rgb(var(--supernova-400) / <alpha-value>)",
+          500: "rgb(var(--supernova-500) / <alpha-value>)",
+          600: "rgb(var(--supernova-600) / <alpha-value>)",
+          700: "rgb(var(--supernova-700) / <alpha-value>)",
+          800: "rgb(var(--supernova-800) / <alpha-value>)",
+          900: "rgb(var(--supernova-900) / <alpha-value>)",
+        },
+      },
+      fontFamily: {
+        cinzel: ["cinzel", "serif"],
       },
     },
   },

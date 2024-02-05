@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  :root {
+    --supernova-50: 254 251 232;
+    --supernova-100: 255 248 194;
+    --supernova-200: 255 236 137;
+    --supernova-300: 255 219 69;
+    --supernova-400: 253 200 32;
+    --supernova-500: 237 171 5;
+    --supernova-600: 204 131 2;
+    --supernova-700: 163 92 5;
+    --supernova-800: 134 72 13;
+    --supernova-900: 114 59 17;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,17 +26,16 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100dvh;
+  min-width: 100vw;
+  @apply bg-black;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.nav_item__active {
+  text-decoration: underline;
+  text-decoration-color: rgb(237 171 5);
+  text-underline-offset: 0.4em;
 }
