@@ -3,6 +3,7 @@ import { Cinzel, Inter } from "next/font/google";
 import favicon from "@public/images/favicon.ico";
 import "./globals.css";
 import Header from "./layout/Header";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 const inter = Inter({ subsets: ["latin"] });
 const cinzel = Cinzel({ subsets: ["latin"], variable: '--font-cinzel' });
@@ -24,14 +25,14 @@ export default function RootLayout({
     <html lang="es">
       <link rel="icon" href={src} type="image/x-icon" />
       <body className={`${inter.className} ${cinzel.variable}`}>
-        <div className="grid grid-rows-[1fr+auto]">
-          <Header />
-          <div className="mt-44 md:mt-0">
-            <main className="h-full w-full">
+        <AntdRegistry>
+          <div className="grid grid-rows-[1fr+auto]">
+            <Header />
+            <main className="h-full w-full block min-h-[calc(100dvh-144px)]">
               {children}
             </main>
           </div>
-        </div>
+        </AntdRegistry>
       </body>
     </html>
   );

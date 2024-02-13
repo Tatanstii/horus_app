@@ -39,3 +39,9 @@ body {
   text-decoration-color: rgb(237 171 5);
   text-underline-offset: 0.4em;
 }
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}

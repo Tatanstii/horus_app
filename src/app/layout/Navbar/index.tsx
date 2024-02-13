@@ -4,7 +4,6 @@ import NavItem from "./item";
 
 export default function Nabvar() {
     const pathname = usePathname();
-    console.log(pathname);
     
     return (
         <nav className="h-full bg-black/70 backdrop-blur py-10 md:py-0">
