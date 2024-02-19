@@ -15,11 +15,12 @@ export type Product = {
   name: string;
   description?: string;
   reference: string;
+  color: string;
   brand: string;
   authenticityLevel: string;
   gender: Gender;
   price: number;
-  imageUrl: string;
+  images: string[];
 };
 
 export type Products = Product[];

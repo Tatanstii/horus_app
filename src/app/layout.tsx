@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Cinzel, Inter } from "next/font/google";
-import favicon from "@public/images/favicon.ico";
+import favicon from "@public/images/favicon/favicon.ico";
 import "./globals.css";
-import Header from "./layout/Header";
+import Header from "./components/layout/Header";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import SupabaseProvider from "./providers/SupabaseProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const cinzel = Cinzel({ subsets: ["latin"], variable: '--font-cinzel' });
@@ -25,14 +26,14 @@ export default function RootLayout({
     <html lang="es">
       <link rel="icon" href={src} type="image/x-icon" />
       <body className={`${inter.className} ${cinzel.variable}`}>
-        <AntdRegistry>
-          <div className="grid grid-rows-[1fr+auto]">
+        <SupabaseProvider>
+          <AntdRegistry>
             <Header />
-            <main className="h-full w-full block min-h-[calc(100dvh-144px)]">
+            <div className="pt-[152px] md:pt-0">
               {children}
-            </main>
-          </div>
-        </AntdRegistry>
+            </div>
+          </AntdRegistry>
+        </SupabaseProvider>
       </body>
     </html>
   );

@@ -6,14 +6,15 @@ export type ProductDTO = {
   name: string;
   description?: string;
   reference: string;
+  color: string;
   brand: string;
   authenticity_level: string;
   gender: Gender;
   price: number;
-  image_url: string;
+  images: string[];
 };
 
-export default async function getProductsMapped(products: ProductDTO[] | null) {
+export default async function getProductsMapped(products: ProductDTO[] | null): Promise<Products> {
   if (!products) return [];
 
   const productsMapped = await products.map((productDTO) => {
@@ -26,7 +27,7 @@ export default async function getProductsMapped(products: ProductDTO[] | null) {
       authenticity_level: "authenticityLevel",
       gender: "gender",
       price: "price",
-      image_url: "imageUrl",
+      images: "images",
     });
   });
   return productsMapped;
