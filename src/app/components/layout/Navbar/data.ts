@@ -6,7 +6,7 @@ export const navItems = [
   },
   {
     id: 2,
-    title: "Catalogo",
+    title: "Catálogo",
     url: "/catalog",
   }
 ];
