@@ -5,9 +5,10 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import SupabaseProvider from "./providers/SupabaseProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
-const cinzel = Cinzel({ subsets: ["latin"], variable: '--font-cinzel' });
+const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel" });
 
 export const metadata: Metadata = {
   title: "⌚ HORUS CATALOGO ⌚",
@@ -19,19 +20,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const { src } = favicon;
 
   return (
     <html lang="es">
       <link rel="icon" href={src} type="image/x-icon" />
       <body className={`${inter.className} ${cinzel.variable}`}>
+        <Analytics />
         <SupabaseProvider>
           <AntdRegistry>
             <Header />
-            <div className="pt-[152px] md:pt-0">
-              {children}
-            </div>
+            <div className="pt-[152px] md:pt-0">{children}</div>
           </AntdRegistry>
         </SupabaseProvider>
       </body>
